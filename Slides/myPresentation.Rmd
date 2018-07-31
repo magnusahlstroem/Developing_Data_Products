@@ -1,0 +1,44 @@
+---
+title: "Ramme for patientsikkerhed"
+author: "Introduktionslæge, PHD Magnus Glindvad Ahlström"
+date: "31 jul 2018"
+output:
+  beamer_presentation: default
+  ioslides_presentation: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Løsning på udfordringer?
+
+1. Hvad forstår vi patientsikkerhed
+Det er ikke sikkert vi er enige i at det er en god forståelse af patientsikkerhed
+Giver en god opdeling af begreberne?
+Uden fejl sker der ikke skade pga. fejl
+Allerede eksisterende frameworks for patientsikkerhed rummes i denne model
+2. Hvad forstår vi ved risiko
+3. Hvordan identificeres temaer og områder
+Risikofaktorerne for at fejl opstår
+Risici efter en fejl er opstået
+Giver klarhed over hvor ”vi befinder os” på den akse 
+4. Hvordan identificeres behandlingssteder
+Hvis vi har data
+5. Hvilke data skal vi bruge og hvordan
+Et grundlag for diskussion
+Balance mellem kontrol og læring
+Et grundlag for diskussion
+
+## Slide with R Output
+
+```{r cars, echo = TRUE}
+summary(cars)
+```
+
+## Slide with Plot
+
+```{r pressure}
+plot(pressure)
+```
+

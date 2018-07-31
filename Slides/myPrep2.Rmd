@@ -1,0 +1,13 @@
+---
+title: "myPrep2"
+author: "MGA"
+date: "31 jul 2018"
+output: ioslides_presentation
+---
+
+
+## Janzy figs
+For instans look at this very nice plot
+```{r}
+with(mtcars, plot(mpg ~ disp))
+```
