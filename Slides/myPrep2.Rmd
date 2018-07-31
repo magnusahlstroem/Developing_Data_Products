@@ -9,5 +9,30 @@ output: ioslides_presentation
 ## Janzy figs
 For instans look at this very nice plot
 ```{r}
+
 with(mtcars, plot(mpg ~ disp))
+```
+
+##Changing the plot a little
+lets make some regression lines to add to the figure
+```{r, warning=FALSE, message=FALSE, fig.height=3, fig.width=5}
+library(dplyr)
+##some functions
+to_power_of <- function(x, power) x^power
+squared <- function(x) to_power_of(x, 2)
+mtcars <- mtcars %>% mutate_all(funs(log, squared))
+fit1 <- lm(mpg ~ disp, data = mtcars)
+fit2 <- lm(mpg ~ disp + disp_squared, data = mtcars)
+fit3 <- lm(mpg ~ disp + disp_log, data = mtcars)
+```
+
+##The figure with the regression lines
+```{r, echo = F}
+with(mtcars, plot(mpg ~ disp))
+nd <- data.frame(disp = 50:500, disp_squared = (50:500)^2, disp_log = log(50:500))
+abline(fit1)
+lines(x = 50:500, y = predict(fit2, newdata = nd), type  = "l", col = "steelblue")
+lines(x = 50:500, y = predict(fit3, newdata = nd), type  = "l", col = "red")
+legend(350,30,legend = c("linear fit", "squared fit", "log fit"), 
+       col = c("black", "steelblue", "red"), lty = 1)
 ```
