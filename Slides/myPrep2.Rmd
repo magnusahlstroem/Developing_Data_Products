@@ -36,3 +36,20 @@ lines(x = 50:500, y = predict(fit3, newdata = nd), type  = "l", col = "red")
 legend(350,30,legend = c("linear fit", "squared fit", "log fit"), 
        col = c("black", "steelblue", "red"), lty = 1)
 ```
+
+```{r}
+alm_prak <- read_csv2("F:/EfUA/MGAH/RBT_tilsynsrapporter/Tilsynsrapporter_med_identifier/Almen_praksis.csv") %>%
+  filter(!is.na(A_Longitude) & !is.na(A_Latitude))
+names(alm_prak)[1] <- "Navn"
+
+icon.red <- makeAwesomeIcon(icon= 'flag', markerColor = 'red', iconColor = 'black')
+icon.orange <- makeAwesomeIcon(icon= 'flag', markerColor = 'orange', iconColor = 'black')
+icon.green <- makeAwesomeIcon(icon= 'flag', markerColor = 'green', iconColor = 'black')
+
+my_map <- leaflet() %>% 
+  addTiles() %>% 
+  addAwesomeMarkers(lat = alm_prak$A_Latitude, 
+             lng = alm_prak$A_Longitude, label = alm_prak$Navn, 
+             icon = ifelse(alm_prak$vurdering + alm_prak$bemaerk == 0, icon.green, 
+                           ifelse(alm_prak$vurdering + alm_prak$bemaerk %in% c(1,2), icon.orange, icon.red)))
+```
