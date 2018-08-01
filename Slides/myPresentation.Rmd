@@ -13,7 +13,7 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ## Løsning på udfordringer?
 
-1. Hvad forstår vi patientsikkerhed
+1. Hvad forstår vi patientsikkerhed?
 Det er ikke sikkert vi er enige i at det er en god forståelse af patientsikkerhed
 Giver en god opdeling af begreberne?
 Uden fejl sker der ikke skade pga. fejl
@@ -27,7 +27,7 @@ Giver klarhed over hvor ”vi befinder os” på den akse
 Hvis vi har data
 5. Hvilke data skal vi bruge og hvordan
 Et grundlag for diskussion
-Balance mellem kontrol og læring
+6. Balance mellem kontrol og læring
 Et grundlag for diskussion
 
 ## Slide with R Output
